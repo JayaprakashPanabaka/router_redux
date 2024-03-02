@@ -39,12 +39,14 @@ const initialTransactions = [];
 const reduxTransactionsReducer = (state = initialTransactions, action) => {
     switch(action.type) {
         case ACTIONS.TRANSACTIONS: 
-        return [...state, {
-            id: action.payload.id,
-            value: action.payload.value,
-            type: action.payload.type,
-            date: action.payload.date,
-        }]
+          return [...state, {
+              id: action.payload.id,
+              value: action.payload.value,
+              type: action.payload.type,
+              date: action.payload.date,
+          }]
+        default:
+            return state;
     }
 }
 
